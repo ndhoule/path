@@ -1,3 +1,7 @@
+## 1.0.2
+
+- Fix some tests mistakes (human error :fire:)
+
 ## 1.0.1
 
 - Fix case where intermediary nullary property breaks lookup
