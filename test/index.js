@@ -57,7 +57,7 @@ describe('retrieve', function() {
     assert.equal(typeof retrieve('non.exist.ent', undefined), 'undefined');
   });
 
-  it('should work on paths ', function() {
+  it('should work on intermediary null paths', function() {
     var obj = {
       dat: {
         bad: undefined
@@ -113,7 +113,17 @@ describe('retrieve.on', function() {
   });
 
   it('should work on null objects', function() {
-    assert.equal(typeof retrieve('non.exist.ent', null), 'undefined');
-    assert.equal(typeof retrieve('non.exist.ent', undefined), 'undefined');
+    assert.equal(typeof retrieve.on('/', 'non/exist/ent', null), 'undefined');
+    assert.equal(typeof retrieve.on('/', 'non/exist/ent', undefined), 'undefined');
+  });
+
+  it('should work on intermediary null paths', function() {
+    var obj = {
+      dat: {
+        bad: undefined
+      }
+    };
+
+    assert.equal(typeof retrieve('/', 'dat/bad/path', obj), 'undefined');
   });
 });
