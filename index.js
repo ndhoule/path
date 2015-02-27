@@ -35,13 +35,17 @@ var split = String.prototype.split;
  */
 
 var locate = function locate(paths, obj) {
+  if (obj == null) {
+    return undefined;
+  }
+
   var val = obj;
 
   for (var i = 0; i < paths.length; i += 1) {
-    if (!has.call(val, paths[i])) {
+    if (val == null || !has.call(val, paths[i])) {
       return undefined;
     }
-    val = val[paths[i]];
+    val = val == null ? val : val[paths[i]];
   }
 
   return val;

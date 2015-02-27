@@ -18,7 +18,8 @@ describe('retrieve', function() {
         zip: 555555,
         coordinates: {
           x: 10,
-          y: 20
+          y: 20,
+          z: null
         }
       },
       phone: '555-555-5555'
@@ -38,7 +39,9 @@ describe('retrieve', function() {
   });
 
   it('should retrieve a nested property from an object', function() {
+    assert.equal(retrieve('address.coordinates', person), person.address.coordinates);
     assert.equal(retrieve('address.coordinates.y', person), person.address.coordinates.y);
+    assert.equal(retrieve('address.coordinates.z', person), person.address.coordinates.z);
   });
 
   it('should return `undefined` when no property is found', function() {
@@ -47,6 +50,21 @@ describe('retrieve', function() {
 
   it('should return `undefined` when a nested property is not found', function() {
     assert.equal(typeof retrieve('non.exist.ent', person), 'undefined');
+  });
+
+  it('should work on null objects', function() {
+    assert.equal(typeof retrieve('non.exist.ent', null), 'undefined');
+    assert.equal(typeof retrieve('non.exist.ent', undefined), 'undefined');
+  });
+
+  it('should work on paths ', function() {
+    var obj = {
+      dat: {
+        bad: undefined
+      }
+    };
+
+    assert.equal(typeof retrieve('dat.bad.path', obj), 'undefined');
   });
 });
 
@@ -92,5 +110,10 @@ describe('retrieve.on', function() {
 
   it('should return `undefined` when a nested property is not found', function() {
     assert.equal(typeof retrieve.on('/', 'non/exist/ent', person), 'undefined');
+  });
+
+  it('should work on null objects', function() {
+    assert.equal(typeof retrieve('non.exist.ent', null), 'undefined');
+    assert.equal(typeof retrieve('non.exist.ent', undefined), 'undefined');
   });
 });
