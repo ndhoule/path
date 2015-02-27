@@ -1,23 +1,25 @@
 {
-  "name": "path",
+  "name": "component-retrieve",
   "version": "1.0.0",
   "description": "Retrieve a property at a specified path.",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ndhoule/path.git"
+    "url": "https://github.com/ndhoule/retrieve.git"
   },
   "keywords": [
-    "component"
+    "component",
+    "get",
+    "retrieve",
+    "path"
   ],
   "author": "Nathan Houle <nathan@nathanhoule.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ndhoule/path/issues"
+    "url": "https://github.com/ndhoule/retrieve/issues"
   },
-  "homepage": "https://github.com/ndhoule/path",
-  "dependencies": {
-  },
+  "homepage": "https://github.com/ndhoule/retrieve",
+  "dependencies": {},
   "devDependencies": {
     "esformatter-braces": "^1.0.0",
     "esformatter-quotes": "^1.0.0",

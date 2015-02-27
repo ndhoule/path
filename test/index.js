@@ -3,9 +3,9 @@
 'use strict';
 
 var assert = require('assert');
-var path = require('../');
+var retrieve = require('../');
 
-describe('path', function() {
+describe('retrieve', function() {
   var person;
 
   beforeEach(function() {
@@ -26,31 +26,31 @@ describe('path', function() {
   });
 
   it('should be a function', function() {
-    assert.equal(typeof path, 'function');
+    assert.equal(typeof retrieve, 'function');
   });
 
   it('should have an arity of 2', function() {
-    assert.equal(path.length, 2);
+    assert.equal(retrieve.length, 2);
   });
 
   it('should retrieve a root-level property from an object', function() {
-    assert.equal(path('age', person), person.age);
+    assert.equal(retrieve('age', person), person.age);
   });
 
   it('should retrieve a nested property from an object', function() {
-    assert.equal(path('address.coordinates.y', person), person.address.coordinates.y);
+    assert.equal(retrieve('address.coordinates.y', person), person.address.coordinates.y);
   });
 
   it('should return `undefined` when no property is found', function() {
-    assert.equal(typeof path('nonexistent', person), 'undefined');
+    assert.equal(typeof retrieve('nonexistent', person), 'undefined');
   });
 
   it('should return `undefined` when a nested property is not found', function() {
-    assert.equal(typeof path('non.exist.ent', person), 'undefined');
+    assert.equal(typeof retrieve('non.exist.ent', person), 'undefined');
   });
 });
 
-describe('path.on', function() {
+describe('retrieve.on', function() {
   var person;
 
   beforeEach(function() {
@@ -71,26 +71,26 @@ describe('path.on', function() {
   });
 
   it('should be a function', function() {
-    assert.equal(typeof path.on, 'function');
+    assert.equal(typeof retrieve.on, 'function');
   });
 
   it('should have an arity of 3', function() {
-    assert.equal(path.on.length, 3);
+    assert.equal(retrieve.on.length, 3);
   });
 
   it('should retrieve a root-level property from an object', function() {
-    assert.equal(path.on('/', 'age', person), person.age);
+    assert.equal(retrieve.on('/', 'age', person), person.age);
   });
 
   it('should retrieve a nested property from an object', function() {
-    assert.equal(path.on('/', 'address/coordinates/y', person), person.address.coordinates.y);
+    assert.equal(retrieve.on('/', 'address/coordinates/y', person), person.address.coordinates.y);
   });
 
   it('should return `undefined` when no property is found', function() {
-    assert.equal(typeof path.on('/', 'nonexistent', person), 'undefined');
+    assert.equal(typeof retrieve.on('/', 'nonexistent', person), 'undefined');
   });
 
   it('should return `undefined` when a nested property is not found', function() {
-    assert.equal(typeof path.on('/', 'non/exist/ent', person), 'undefined');
+    assert.equal(typeof retrieve.on('/', 'non/exist/ent', person), 'undefined');
   });
 });

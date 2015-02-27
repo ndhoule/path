@@ -50,7 +50,7 @@ var locate = function locate(paths, obj) {
 /**
  * Find a path on an object given a separator.
  *
- * @name pathOn
+ * @name retrieveOn
  * @api public
  * @param {string} separator
  * @param {string} str
@@ -67,18 +67,18 @@ var locate = function locate(paths, obj) {
  *   }
  * };
  *
- * pathOn('/', 'address/coordinates/x', person);
+ * retrieveOn('/', 'address/coordinates/x', person);
  * //=> 10
  */
 
-var pathOn = function pathOn(separator, str, obj) {
+var retrieveOn = function retrieveOn(separator, str, obj) {
   return locate(split.call(str, separator), obj);
 };
 
 /**
  * Retrieve up a property on an object located at a given path.
  *
- * @name path
+ * @name retrieve
  * @api public
  * @param {string} str The dot-delimited path to search for.
  * @param {Object} obj The object to search.
@@ -94,17 +94,17 @@ var pathOn = function pathOn(separator, str, obj) {
  *   }
  * };
  *
- * path('address.coordinates.y', person);
+ * retrieve('address.coordinates.y', person);
  * //=> 20
  */
 
-var path = function path(str, obj) {
-  return pathOn('.', str, obj);
+var retrieve = function retrieve(str, obj) {
+  return retrieveOn('.', str, obj);
 };
 
 /**
  * Exports.
  */
 
-module.exports = path;
-module.exports.on = pathOn;
+module.exports = retrieve;
+module.exports.on = retrieveOn;

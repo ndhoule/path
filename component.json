@@ -1,6 +1,6 @@
 {
-  "name": "path",
-  "repo": "ndhoule/path",
+  "name": "retrieve",
+  "repo": "ndhoule/retrieve",
   "version": "1.0.0",
   "description": "Retrieve a property at a specified path.",
   "keywords": [

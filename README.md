@@ -1,4 +1,4 @@
-# path [![Circle CI][circleci-badge]][circleci-link]
+# retrieve [![Circle CI][circleci-badge]][circleci-link]
 
 Retrieve a property at a specified path.
 
@@ -7,18 +7,18 @@ Retrieve a property at a specified path.
 Browser:
 
 ```sh
-component install ndhoule/path
+component install ndhoule/retrieve
 ```
 
 Node:
 
 ```sh
-$ npm install path
+$ npm install component-retrieve
 ```
 
 ## API
 
-### path(str : string, obj : Object) => *
+### `retrieve(str : string, obj : Object) => *`
 
 Retrieve a property at a specified, dot-delimited path.
 
@@ -33,11 +33,11 @@ var person = {
   }
 };
 
-path('address.coordinates.y', person);
+retrieve('address.coordinates.y', person);
 //=> 20
 ```
 
-### path.on(delimiter : string, str : string, obj : Object) => *
+### `retrieve.on(delimiter : string, str : string, obj : Object) => *`
 
 Retrieve a property at a specified path and provide a delimiter for the lookup string.
 
@@ -52,7 +52,7 @@ var person = {
   }
 };
 
-path.on('/', 'address/coordinates/x', person);
+retrieve.on('/', 'address/coordinates/x', person);
 //=> 10
 ```
 
@@ -60,5 +60,5 @@ path.on('/', 'address/coordinates/x', person);
 
 Released under the [MIT license](LICENSE.md).
 
-[circleci-link]: https://circleci.com/gh/ndhoule/path
-[circleci-badge]: https://circleci.com/gh/ndhoule/path.svg?style=svg&circle-token=
+[circleci-link]: https://circleci.com/gh/ndhoule/retrieve
+[circleci-badge]: https://circleci.com/gh/ndhoule/retrieve.svg?style=svg&circle-token=e363b6aad1d9f291773c0a73066a2162f0459462
