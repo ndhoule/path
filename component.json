@@ -1,0 +1,14 @@
+{
+  "name": "path",
+  "repo": "ndhoule/path",
+  "version": "1.0.0",
+  "description": "Retrieve a property at a specified path.",
+  "keywords": [
+  ],
+  "license": "MIT",
+  "scripts": ["index.js"],
+  "dependencies": {},
+  "development": {
+    "mochajs/mocha": "^2.1.0"
+  }
+}

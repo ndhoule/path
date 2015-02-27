@@ -1,0 +1,29 @@
+{
+  "name": "path",
+  "version": "1.0.0",
+  "description": "Retrieve a property at a specified path.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ndhoule/path.git"
+  },
+  "keywords": [
+    "component"
+  ],
+  "author": "Nathan Houle <nathan@nathanhoule.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ndhoule/path/issues"
+  },
+  "homepage": "https://github.com/ndhoule/path",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "esformatter-braces": "^1.0.0",
+    "esformatter-quotes": "^1.0.0",
+    "esformatter-semicolons": "^1.0.3",
+    "eslint": "^0.15.0",
+    "jsfmt": "^0.4.0",
+    "mocha": "^2.1.0"
+  }
+}
