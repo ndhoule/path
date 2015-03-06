@@ -13,7 +13,7 @@ component install ndhoule/retrieve
 Node:
 
 ```sh
-$ npm install component-retrieve
+$ npm install retrieve
 ```
 
 ## API

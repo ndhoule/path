@@ -1,5 +1,5 @@
 {
-  "name": "component-retrieve",
+  "name": "retrieve",
   "version": "1.0.2",
   "description": "Retrieve a property at a specified path.",
   "main": "index.js",
