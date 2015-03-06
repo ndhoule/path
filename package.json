@@ -1,6 +1,6 @@
 {
   "name": "retrieve",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Retrieve a property at a specified path.",
   "main": "index.js",
   "repository": {
